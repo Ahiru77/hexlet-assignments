@@ -33,6 +33,8 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.assertj:assertj-core:3.23.1")
+	implementation("gg.jte:jte:3.1.9")
+	implementation("io.javalin:javalin-rendering:6.1.3")
 }
 
 tasks.test {
