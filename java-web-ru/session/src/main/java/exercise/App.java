@@ -16,7 +16,15 @@ public final class App {
         });
 
         // BEGIN
-        
+//        app.get("/", ctx -> {
+//            var page = new MainPage(ctx.sessionAttribute("currentUser"));
+//            ctx.render("index.jte", model("page", page));
+//        });
+
+        app.get(NamedRoutes.rootPath(), SessionsController::index);
+        app.get(NamedRoutes.buildSessionPath(), SessionsController::build);
+        app.post(NamedRoutes.loginPath(), SessionsController::create);
+        app.post(NamedRoutes.logoutPath(), SessionsController::destroy);
         // END
 
         return app;
